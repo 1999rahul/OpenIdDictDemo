@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\rahul\\Desktop\\C#Playground\\OpenIdDictDemo\\OpenIdDictDemo\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.OpenIdDictDemo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.OpenIdDictDemo.props",
+      "PackagePath": "build\\OpenIdDictDemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.OpenIdDictDemo.props",
+      "PackagePath": "buildMultiTargeting\\OpenIdDictDemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.OpenIdDictDemo.props",
+      "PackagePath": "buildTransitive\\OpenIdDictDemo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

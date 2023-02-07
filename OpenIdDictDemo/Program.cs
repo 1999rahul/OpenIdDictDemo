@@ -51,9 +51,10 @@ namespace OpenIdDictDemo
 
                 options
                       .SetAuthorizationEndpointUris("/connect/authorize")
-                     .SetTokenEndpointUris("/connect/token");
+                     .SetTokenEndpointUris("/connect/token")
+                     .SetUserinfoEndpointUris("/connect/userinfo");
 
-                 // Encryption and signing of tokens
+                // Encryption and signing of tokens
                 options
                      .AddEphemeralEncryptionKey()
                      .AddEphemeralSigningKey();
@@ -65,7 +66,8 @@ namespace OpenIdDictDemo
                  options
                      .UseAspNetCore()
                      .EnableTokenEndpointPassthrough()
-                     .EnableAuthorizationEndpointPassthrough();
+                     .EnableAuthorizationEndpointPassthrough()
+                     .EnableUserinfoEndpointPassthrough();
                 options
                      .AddEphemeralEncryptionKey()
                      .AddEphemeralSigningKey()
@@ -87,6 +89,8 @@ namespace OpenIdDictDemo
             app.UseRouting();
 
             app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

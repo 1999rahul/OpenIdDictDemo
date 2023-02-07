@@ -44,10 +44,11 @@ namespace OpenIdDictDemo
                 // Register the OpenIddict server components.
             .AddServer(options =>
             {
-                 //options.AllowClientCredentialsFlow();
+                 options.AllowClientCredentialsFlow();
 
                 options.AllowAuthorizationCodeFlow()
-                       .RequireProofKeyForCodeExchange();
+                       .RequireProofKeyForCodeExchange()
+                       .AllowRefreshTokenFlow();
 
                 options
                       .SetAuthorizationEndpointUris("/connect/authorize")

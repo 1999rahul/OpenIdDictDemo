@@ -11,7 +11,7 @@ namespace OpenIdDictDemo.Controllers
     {
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Login(string returnUrl = "ytytrytr")
+        public IActionResult Login(string returnUrl = "test")
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();

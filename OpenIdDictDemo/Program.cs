@@ -19,7 +19,6 @@ namespace OpenIdDictDemo
                     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                     {
                          options.LoginPath = "/account/login";
-
                     });
             services.AddHostedService<TestData>();
             services.AddDbContext<DbContext>(options =>
@@ -45,10 +44,13 @@ namespace OpenIdDictDemo
                 // Register the OpenIddict server components.
             .AddServer(options =>
             {
-                 options
-                        .AllowClientCredentialsFlow();
+                 //options.AllowClientCredentialsFlow();
 
-                 options
+                options.AllowAuthorizationCodeFlow()
+                       .RequireProofKeyForCodeExchange();
+
+                options
+                      .SetAuthorizationEndpointUris("/connect/authorize")
                      .SetTokenEndpointUris("/connect/token");
 
                  // Encryption and signing of tokens
@@ -62,7 +64,8 @@ namespace OpenIdDictDemo
                 // Register the ASP.NET Core host and configure the ASP.NET Core-specific options.
                  options
                      .UseAspNetCore()
-                     .EnableTokenEndpointPassthrough();
+                     .EnableTokenEndpointPassthrough()
+                     .EnableAuthorizationEndpointPassthrough();
                 options
                      .AddEphemeralEncryptionKey()
                      .AddEphemeralSigningKey()
